@@ -44,13 +44,25 @@ def add(ha,hb):
         order = order*10
         node = node.next
 
-    return num1 + num2
+    total = num1 + num2
+
+    c = llc.LinkedList()
+
+    #assume you can't have insert...
 
 
-sum = add(ha,hb)
-print("Sum = " + str(sum))
+    while(total):
+        num = total % 10
+        c.append(num)
+        total = int(total / 10)
+
+    return c
+
+
+c = add(ha,hb)
 
 a.display()
 b.display()
+c.display()
 
 
