@@ -19,12 +19,27 @@ class TreeNode(object):
 
         return self
 
+    def inOrder(self):
+
+        if self.left:
+            self.left.inOrder()
+
+        print(self.val)
+
+        if self.right:
+            self.right.inOrder()
 
 
-a = [15,12,27,7,14,28,88]
-b = [5,1,4,None,None,3,6]
-
+a = [15,12,27,7,14,20,88]
+# b = [5,1,4,None,None,3,6]
+#
 root1 = TreeNode().make(a)
-root2 = TreeNode().make(b)
+# root2 = TreeNode().make(b)
+#
+root1.inOrder()
+print("#######")
+#print("Tree Created!")
 
-print("Done")
+c  = [6,2,8,1,3,7,9]
+root = TreeNode().make(c)
+root.inOrder()
