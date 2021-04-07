@@ -8,34 +8,18 @@ class Solution(object):
         if len(nums) < 2:
             return len(nums)
 
-        counter = 0
+        #2 pointer solution
 
-        tmp = nums[0]
-        for i in range(1,len(nums),1):
+        i=0
 
-            if nums[i] == tmp:
-                nums[i] = None
-                counter +=1
-            else:
-                tmp = nums[i]
+        for j in range(len(nums)):
 
-        #counter
-        x = len(nums)-counter
-
-        #remove Nones
-        i = 0
-        while(i < len(nums) -1):
-
-            if nums[i] == None:
-                nums[i:] = nums[i+1:]
-                i-=1
-
-            i+=1
+            if nums[i] != nums[j]:
+                i+=1
+                nums[i] = nums[j]
 
 
-
-
-        return x
+        return i+1
 
 
 
